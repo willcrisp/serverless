@@ -1,0 +1,11 @@
+{
+    "body": "{\"content\":\"yea the boiz\",\"attachment\":\"hello2.jpg\"}",
+    "pathParameters": {
+      "id": "3ed39090-3502-11e9-8640-cd198386b9c8"
+    },
+    "requestContext": {
+      "identity": {
+        "cognitoIdentityId": "USER-SUB-1234"
+      }
+    }
+  }

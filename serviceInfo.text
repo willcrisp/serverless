@@ -1,0 +1,29 @@
+Service Information
+service: crispy-app-api
+stage: prod
+region: ap-southeast-2
+stack: crispy-app-api-prod
+resources: 35
+api keys:
+  None
+endpoints:
+  POST - https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod/notes
+  GET - https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod/notes/{id}
+  GET - https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod/notes
+  PUT - https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod/notes/{id}
+  DELETE - https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod/notes/{id}
+functions:
+  create: crispy-app-api-prod-create
+  get: crispy-app-api-prod-get
+  list: crispy-app-api-prod-list
+  update: crispy-app-api-prod-update
+  delete: crispy-app-api-prod-delete
+layers:
+  None
+
+aws cognito-idp sign-up --region ap-southeast-2 --client-id 2ihu6l19c388pv74v82honfrh3 --username will@example.com --password Passw0rd!
+aws cognito-idp admin-confirm-sign-up --region ap-southeast-2 --user-pool-id ap-southeast-2_pckNk8jia --username will@example.com
+
+
+npx aws-api-gateway-cli-test --username will@example.com --password Passw0rd! --user-pool-id ap-southeast-2_pckNk8jia --app-client-id 2ihu6l19c388pv74v82honfrh3 --cognito-region ap-southeast-2 --identity-pool-id ap-southeast-2:d60e63eb-3a46-47a0-9ad8-4d51ca14764f --invoke-url https://xn88i32fqh.execute-api.ap-southeast-2.amazonaws.com/prod --api-gateway-region ap-southeast-2 --path-template /notes --method POST --body "{\"content\":\"hello world\",\"attachment\":\"hello.jpg\"}"
+
